@@ -1,0 +1,7 @@
+pyrogram
+tgcrypto
+loguru
+pyyaml
+pydantic
+# not support windows
+# uvloop

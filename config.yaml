@@ -1,0 +1,46 @@
+name: TGBot # 机器人名字
+isUser: true # 是否是用户机器人
+bot_token: '' # 机器人 token 如果是用户机器人就不用填写
+api_id: 21341224
+api_hash: '2d910cf3998019516d6d4bbb53713f20'
+# 会话字符串
+session_str: | 
+  
+
+log: DEBUG  # 日志等级
+
+# 机器人 /start 时候的描述
+bot_desc: |
+  机器人描述发送 /start 的时候
+
+
+# 插件设置
+
+# 关键词监控插件
+KeyMonitor:
+  enable: false  # 关闭
+  keywords: # 监控的关键词
+  - 做爱
+  forword_id: # 转发信息到id
+  - me
+
+# 文件改名插件
+RenameFile:
+  enable: true # 启用
+  file_path: E:\TEMP\WFBot\file.zip  # 文件路径
+
+  # 发送文件时的描述 文件的更新时间用 {update_time} 代替
+  # yaml 中使用 | 来识别带换行的字符串
+  file_desc: | 
+    当前毒包更新时间为: {update_time} 
+    请核对好毒包再推毒！
+
+# 输入命令提示插件
+CommandTips:
+
+# 输入自定义命令输出描述
+CustomCommands:
+  # 注意命令不要带 /
+  - command: test
+    text: 你死了算了
+    desc: 测试
