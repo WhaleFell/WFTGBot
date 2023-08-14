@@ -21,8 +21,12 @@ if sys.platform == 'win32':
 
 def mkAPP():
     if Path(ROOTPATH, "%s.session" % CONF.name).exists():
-        logger.info(".session exists!use session to login")
-        return Client(name=CONF.name)
+        logger.info("session exists!use session to login")
+        return Client(
+            name=CONF.name,
+            api_id=CONF.api_id,
+            api_hash=CONF.api_hash,
+        )
 
     if CONF.session_str:
         logger.info("login by session string!")
@@ -51,6 +55,8 @@ def mkAPP():
             api_hash=CONF.api_hash,
             in_memory=True
         )
+
+    raise Exception("error to mk client!")
 
 
 tg = mkAPP()

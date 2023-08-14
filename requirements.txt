@@ -3,5 +3,9 @@ tgcrypto
 loguru
 pyyaml
 pydantic
+flask
+flask_login
+click
+
 # not support windows
 # uvloop

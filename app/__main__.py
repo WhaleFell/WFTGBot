@@ -53,6 +53,13 @@ async def start_bot():
     await tg.stop()
 
 
+try:
+    import uvloop
+    uvloop.install()
+except ImportError:
+    logger.info("UVloop not found use default event loop!")
+
+
 def main():
     # 一定要在当前文件获取事件循环
     # must get the event loop in the file
