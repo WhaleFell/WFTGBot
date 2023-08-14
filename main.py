@@ -29,11 +29,11 @@ def start(without_web):
     if without_web:
         return subprocess.Popen("python -m app", shell=True)
     else:
+        subprocess.Popen("python -m app", shell=True)
         server.run(
             host=CONF.Web.host,
             port=CONF.Web.port,
         )
-        subprocess.Popen("python -m app", shell=True)
 
 
 @click.command(help="登录并生成字符串 token")

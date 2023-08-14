@@ -5,7 +5,8 @@ api_id: 21341224
 api_hash: '2d910cf3998019516d6d4bbb53713f20'
 # 会话字符串（如果是机器人账户的话不用填写）
 session_str: | 
-  
+  BQFFpCgAXsT4TgIz-FDyPQW3oLSZ0DNdImWZs7i31GszL-j7xeDYbtlCIGwQd8GPuWmqYZVLs-B48eLWtNaIxm9vHmH0QA4vUEpN4ruNQuOfpMn02uSjueG8ZdC1_99d7I-DpvFKYAFY5YBF-vzc4t-JZZi8Xhbg6TktRSYy7fsw8D4qDkE2dZ7tSgJ2h-VRoaAZQD6Qz2cO0kfY7ajbLL85C4pZyJcHSFp4p3Ntb8MkpZmXbgsE4bTa9BMp0qiDs9TjjdmI-eGZbmcttTSDlgDBDwpEQUO70WTKTw2mnLOEJ6DUxfxkXG_-12yTysAjmWIWVgeyMjyQRD3ipM1eZsIW0qZtMQAAAABNmqdwAA
+
 
 log: DEBUG  # 日志等级
 
@@ -48,9 +49,27 @@ CommandTips:
 # 输入自定义命令输出描述
 CustomCommands:
   # 注意命令不要带 /
-  - command: test
-    text: 你死了算了
-    desc: 测试自定义命令
-  - command: nmsl
-    text: 你妈死了
-    desc: 测试自定义命令
+  - command: jdgs
+    text: | 
+      渠道：
+      行业：
+      微信号：
+      微信名字：
+      电话：
+      地区：
+      交单人：
+      单数：
+      文件：
+    desc: 查看交单格式
+  
+  - command: jjff
+    text: | 
+      弹窗解决方法频道：
+      https://t.me/+wY8Wx6M_a5BlMGU1
+    desc: 查看弹窗解决方法
+  
+  - command: xsjc
+    text: | 
+      新手教程频道：
+      https://t.me/+5NRMXo6d_EM0Y2Rl
+    desc: 查看新手教程
