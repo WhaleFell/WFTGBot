@@ -1,3 +1,36 @@
+# Run Guide
+
+```shell
+# docker 安装
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+# 克隆项目
+git clone https://github.com/WhaleFell/WFTGBot.git
+docker build -t tgbot .
+
+# 登录并获取 token
+# 按照提示一步一步登录
+docker run -it --rm --name tgbot -v /root/tgconfigs/tg.yaml:/wkdir/config.yaml tgbot python main.py token
+
+# 新建配置文件夹
+mkdir /root/tgconfigs
+# 新建这个文件
+touch /root/tgconfigs/tg.yaml
+# 写入文件内容 在下面
+# 将上一步获取的 token 字符串写入到 tg.yaml 的 session_str 字段
+nano /root/tgconfigs/tg.yaml
+
+# 运行
+docker run -d -p 8099:5555 --name tgbot -v /root/tgconfigs/tg.yaml:/wkdir/config.yaml tgbot python main.py start
+
+# 重启
+docker restart tgbot
+```
+
+## tg.yaml
+
+```yaml
 name: TGBot # 机器人名字
 isUser: true # 是否是用户机器人
 bot_token: '' # 机器人 token 如果是用户机器人就不用填写
@@ -41,7 +74,7 @@ RenameFile:
     当前毒包更新时间为: {update_time} 
     请核对好毒包再推毒！
 
-# 输入命令提示插件
+# 输入命令提示插件 未完善
 CommandTips:
 
 # 输入自定义命令输出描述
@@ -71,3 +104,4 @@ CustomCommands:
       新手教程频道：
       https://t.me/+5NRMXo6d_EM0Y2Rl
     desc: 查看新手教程
+```

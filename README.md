@@ -43,6 +43,7 @@ docker build -t tgbot .
 # 先把容器后台运行好
 docker run -d -p 8000:5555 --name tgbot -v /root/tgconfigs/tg.yaml:/wkdir/config.yaml tgbot /bin/sh
 
+# 后台运行 python main.py start
 docker run -d -p 8099:5555 --name tgbot -v /root/tgconfigs/tg.yaml:/wkdir/config.yaml tgbot python main.py start
 
 docker run -it -p 8000:5555 --name tgbot -v /root/tgconfigs/tg.yaml:/wkdir/config.yaml tgbot /bin/sh
@@ -67,8 +68,7 @@ bot_token: '' # 机器人 token 如果是用户机器人就不用填写
 api_id: 21341224
 api_hash: '2d910cf3998019516d6d4bbb53713f20'
 # 会话字符串（如果是机器人账户的话不用填写）
-session_str: | 
-  
+session_str: 
 
 log: DEBUG  # 日志等级
 
@@ -76,7 +76,7 @@ log: DEBUG  # 日志等级
 bot_desc: |
   机器人描述发送 /start 的时候
 
-web:
+Web:
   host: 0.0.0.0
   port: 5555
   username: admin
@@ -111,12 +111,30 @@ CommandTips:
 # 输入自定义命令输出描述
 CustomCommands:
   # 注意命令不要带 /
-  - command: test
-    text: 你死了算了
-    desc: 测试自定义命令
-  - command: nmsl
-    text: 你妈死了
-    desc: 测试自定义命令
+  - command: jdgs
+    text: | 
+      渠道：
+      行业：
+      微信号：
+      微信名字：
+      电话：
+      地区：
+      交单人：
+      单数：
+      文件：
+    desc: 查看交单格式
+  
+  - command: jjff
+    text: | 
+      弹窗解决方法频道：
+      https://t.me/+wY8Wx6M_a5BlMGU1
+    desc: 查看弹窗解决方法
+  
+  - command: xsjc
+    text: | 
+      新手教程频道：
+      https://t.me/+5NRMXo6d_EM0Y2Rl
+    desc: 查看新手教程
 ```
 
 ## directory structrue

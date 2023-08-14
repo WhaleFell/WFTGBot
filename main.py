@@ -29,6 +29,7 @@ def start(without_web):
     if without_web:
         return subprocess.Popen("python -m app", shell=True)
     else:
+        # 先调用外部运行 app tgbot 模块先
         subprocess.Popen("python -m app", shell=True)
         server.run(
             host=CONF.Web.host,
