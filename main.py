@@ -44,7 +44,7 @@ def token():
     API_HASH = input(
         f"\nEnter Your API_HASH[{CONF.api_hash}]:\n > ").strip() or CONF.api_hash
 
-    i = c("wbb", api_id=API_ID, api_hash=API_HASH, in_memory=True)
+    i = c("tempSession", api_id=API_ID, api_hash=API_HASH, in_memory=True)
 
     with i:
         ss = i.export_session_string()
