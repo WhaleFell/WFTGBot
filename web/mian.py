@@ -40,7 +40,7 @@ def login():
         else:
             return 'Invalid username or password'
 
-    return render_template('login.html')
+    return render_template('login.html', conf=CONF)
 
 
 @server.route('/', methods=['GET', 'POST'])
@@ -53,9 +53,10 @@ def upload_file():
             logger.success(f"文件上传成功并保存为 {filepath}")
             return f"文件上传成功并保存为 {filepath}"
     return '''
+    <h1>当前管理的机器人:%s</h1>
     <h1>上传文件</h1>
     <form method="post" enctype="multipart/form-data">
         <input type="file" name="file">
         <input type="submit" value="上传">
     </form>
-    '''
+    ''' % CONF.name

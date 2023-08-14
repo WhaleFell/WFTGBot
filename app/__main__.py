@@ -52,10 +52,6 @@ async def start_bot():
 
     await tg.stop()
 
-
-
-
-
 def main():
     # 一定要在当前文件获取事件循环
     # must get the event loop in the file
