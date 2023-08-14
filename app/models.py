@@ -36,6 +36,16 @@ class CustomCommandConfig(PluginConfig):
     desc: str = "是大傻逼"
 
 
+class WebConfig(BaseModel):
+    host: str = "0.0.0.0"
+    port: int = 5000
+    # 账号密码
+    username: str = "admin"
+    password: str = "admin"
+    # 随机字符串,不懂就不要动
+    SECRET_KEY: str = "swepcwiecwpiencwicn"
+
+
 class Config(BaseModel):
     name: str = Field(default="TGBot", description="名称")
     isUser: bool = Field(default=False, description="是否为用户")
@@ -45,6 +55,9 @@ class Config(BaseModel):
     api_hash: str = Field(default="121", description="API Hash")
     log: str = Field(default="DEBUG", description="日志级别")
     bot_desc: str = "机器人描述发送 /start 的时候"
+
+    # web
+    Web: WebConfig = WebConfig()
 
     # plugins config
     KeyMonitor: KeyMonitorConfig = KeyMonitorConfig()

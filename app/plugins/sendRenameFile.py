@@ -16,9 +16,9 @@ async def get_bot_info():
     global user
     user = await tg.get_me()
 
-
+# 获取当前运行中的事件循环
 loop = asyncio.get_running_loop()
-# loop.run_until_complete(get_bot_info())
+# 指派到当前运行的事件循环中
 asyncio.ensure_future(get_bot_info(), loop=loop)
 
 

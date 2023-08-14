@@ -13,6 +13,9 @@
 #     print(f"\n{ss}\n")
 
 import subprocess
+from web.mian import server
+
 
 if __name__ == "__main__":
-    subprocess.run(["python", "-m", "app"])
+    subprocess.Popen("python -m app", shell=True)
+    server.run()
