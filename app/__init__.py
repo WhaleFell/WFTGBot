@@ -18,6 +18,12 @@ if sys.platform == 'win32':
     # Set the policy to prevent "Event loop is closed" error on Windows - https://github.com/encode/httpx/issues/914
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
+try:
+    import uvloop
+    uvloop.install()
+except ImportError:
+    logger.info("UVloop not found use default event loop!")
+
 
 def mkAPP():
     if Path(ROOTPATH, "%s.session" % CONF.name).exists():

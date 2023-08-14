@@ -53,11 +53,7 @@ async def start_bot():
     await tg.stop()
 
 
-try:
-    import uvloop
-    uvloop.install()
-except ImportError:
-    logger.info("UVloop not found use default event loop!")
+
 
 
 def main():
